@@ -1,0 +1,12 @@
+Plan:
+- Have a build command to make new houses on demand
+-- set up permissions in the code
+
+- Have a demolish command to delete entire category easily
+- Each house will have an owner, housemates and guests, with owner having full control of their house, housemates almost full access, and guests shouldn't be able to read message history, with minimal access.
+- Owner can make new rooms and stuff and change permissions within their house as sees fit
+- Server should have a channel with information about the status of houses and their owners
+- Add autorole
+- Add welcome message
+- 
+- to be continued
