@@ -1,6 +1,7 @@
 const fs = require("fs");
 const Discord = require("discord.js");
-const prefix = "Mayor, ";
+const config = require(`./config.json`);
+const prefix = config.prefix;
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
@@ -91,5 +92,5 @@ client.on("guildMemberAdd", member => {
   ch.send(joinResponse);
 });
 
-client.login(process.env.BOTTOKEN);
+client.login(config.token);
 console.log(`Project Nie initializing...`);
