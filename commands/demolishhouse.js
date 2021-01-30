@@ -5,13 +5,11 @@ module.exports = {
 		const member = message.member;
 		const server = message.guild;
 		const channel = message.channel;
-		if (member.roles.cache.some(role => role.name === 'Engineer')) {
-			categoryChannel = channel.parent;
-			if (categoryChannel.name !== 'Vacant House')
-				return message.channel.send('This is not a house!');
+		if (member.roles.cache.some(role => role.name === 'Administrator')) {
+			const categoryChannel = channel.parent;
 			if (channel.name !== 'control-room')
-				return message.reply('fuck off, idiot.');
-			rooms = server.channels.cache.filter(x => x.parent == categoryChannel);
+				return message.reply('please, perform this command in the control room of the respective house.');
+			const rooms = server.channels.cache.filter(x => x.parent == categoryChannel);
 			let filter = (message) => !message.author.bot;
 			let options = {
 				max: 1,
@@ -42,7 +40,7 @@ module.exports = {
 			message.reply('Do you really want to demolish this house? (Y/N)');
 		}
 		else {
-			return message.channel.send('You don\'t have Engineer role to perform this command!');
+			return message.channel.send('You don\'t have Administrator role to perform this command!');
 		}
 	}
 }
