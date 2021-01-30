@@ -227,7 +227,7 @@ module.exports = {
               });
             })
             .catch(console.error);
-          channel.setTopic = args[2];
+          channel.setTopic = `${args[2]}`;
 
           return message.reply(
             `Member ${target} is now set as the owner of the ${channel.parent.name}!`
