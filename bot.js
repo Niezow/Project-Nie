@@ -79,10 +79,9 @@ client.on("guildMemberAdd", member => {
   console.log("Member joined.");
   const joinResponse = `Hello **${member.user.username}**, welcome to: **${
     member.guild.name
-  }**! Please read ${member.guild.channels.cache.find(
-    "794948171750440991"
+  }**! Please read ${member.guild.channels.cache.find(ch => ch.id == "794948171750440991"
   )} for info! Enjoy your stay! ${member.guild.channels.cache.find(
-    "797834018409283614}"
+    ch => ch.id == "797834018409283614"}
   )} for chat!`;
   let role = member.guild.roles.cache.find(r => r.name == "Dwellers");
   if (!role) return console.log("Role doesn't exist.");
